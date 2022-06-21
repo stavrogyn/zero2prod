@@ -5,7 +5,7 @@ async fn greet(req: HttpRequest) -> impl Responder {
     let name = req.match_info().get("name").unwrap_or("World"); format!("Hello {}!", &name)
 }
 
-#[actix_web::main] // or #[tokio::main]
+#[tokio::main]
 async fn main() -> std::io::Result<()> {
 
     env_logger::init_from_env(Env::default().default_filter_or("info"));
